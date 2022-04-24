@@ -1,5 +1,6 @@
 # VMS Telemetry System (VTS)
-C:\Users\ianre\Desktop\coda\VMS-Telemetry> python .\dashboardGUI.py
-C:\Users\ianre\Desktop\coda\VMS-Telemetry> python .\base-record.py
-
-and /VMS-Dash-main/ python3 on-board.py
+## Run
+* install everything in `requirements.txt`
+* `python .\dashboardGUI.py` on the base laptop - contains all the graphs
+* `python .\base-record.py` actual CAN-Xbee communication. Run this on the base laptop as a background process and decode CAN messages
+* `python3 on-board.py` onboard utility that sends select CAN messages to the base station
