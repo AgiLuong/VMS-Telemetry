@@ -21,6 +21,7 @@ PLEASE
 from digi.xbee.devices import XBeeDevice
 import os
 from datetime import datetime
+import binascii
 '''
 f = open('txt.txt', 'a', os.O_NONBLOCK)
 while 1:
@@ -49,16 +50,20 @@ def main():
         device.open()
 
         def data_receive_callback(xbee_message):
-            #print("From %s >> %s" % (xbee_message.remote_device.get_64bit_addr(),
-            #                         xbee_message.data.decode()))
-            m = xbee_message.data.decode()
-            m_s = m.split(" ")
+            '''
+            print("From %s >> %s" % (xbee_message.remote_device.get_64bit_addr(),
+                                     xbee_message.data.decode()))
+            '''
+            
+            #m = xbee_message.data.decode()
+            #m_s = m.split(" ")
 
-            time_stamp = datetime.fromtimestamp(float(m_s[-1]))
-            print(time_stamp.second,time_stamp.microsecond,m_s[1:2],m_s[3:-2])
+            #time_stamp = datetime.fromtimestamp(float(m_s[-1]))
+            #print(time_stamp.second,time_stamp.microsecond,m_s[1:2],m_s[3:-2])
 
             #f = open('log.txt', 'a', os.O_NONBLOCK)
-            f.write(xbee_message.data.decode()+"\n")
+            #print(m)
+            #f.write(m+"\n")
             #f.write("\n")
             f.flush()
                             
